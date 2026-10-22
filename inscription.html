@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<title data-i18n="meta.formTitle">S'inscrire — GRH International (GIRH)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Public+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="topline" data-i18n-html="top.line">Actions de l'<b>Investissement Direct Étranger (IDE)</b> en Afrique</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="index.html" data-i18n-aria="brand.aria">
+      <img class="brand-mark" src="assets/img/logo.png" data-i18n-alt="brand.alt">
+      <span class="brand-text">
+        <span class="brand-title" data-i18n-html="brand.title">GRH <span>INTERNATIONAL</span></span>
+      </span>
+    </a>
+    <div class="header-right">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" class="lang-btn active" data-lang="fr" aria-label="Français">
+          <svg viewBox="0 0 3 2"><rect width="1" height="2" x="0" fill="#0055A4"/><rect width="1" height="2" x="1" fill="#FFFFFF"/><rect width="1" height="2" x="2" fill="#EF4135"/></svg>FR
+        </button>
+        <button type="button" class="lang-btn" data-lang="en" aria-label="English">
+          <svg viewBox="0 0 60 30"><clipPath id="ukc2"><rect width="60" height="30"/></clipPath><g clip-path="url(#ukc2)"><rect width="60" height="30" fill="#012169"/><path d="M0,0 60,30 M60,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 60,30 M60,0 0,30" stroke="#C8102E" stroke-width="3.6"/><path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10"/><path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6"/></g></svg>EN
+        </button>
+      </div>
+      <div class="menu-wrap" id="menuWrap">
+        <button type="button" class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="Menu">
+          <span class="menu-bars"><span></span><span></span><span></span></span>
+          <span class="menu-label" data-i18n="nav.menu">Menu</span>
+        </button>
+        <nav class="menu-dropdown" aria-label="Navigation principale">
+          <a href="index.html"  data-i18n="nav.home">Accueil</a>
+          <a href="inscription.html" class="active" data-i18n="nav.register">S'inscrire</a>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="form-hero">
+  <h1 data-i18n="form.heroTitle">Formulaire d'inscription — Recensement des partenaires associés</h1>
+  <p data-i18n="form.heroSub">Veuillez renseigner soigneusement chacune des rubriques ci-dessous. Vos informations sont conservées automatiquement sur cet appareil jusqu'à la soumission.</p>
+</section>
+
+<main class="form-shell">
+  <form id="registrationForm" action="submit.php" method="post" enctype="multipart/form-data" novalidate>
+
+    <!-- ============ 01. DOCUMENTS À JOINDRE ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">01</span><h2 data-i18n="form.sec1">Documents à joindre</h2></div>
+      <div class="fieldset-body">
+        <div class="grid-2">
+          <div class="field" data-field="photo">
+            <label data-i18n="f.photo">Joindre une photo (formats JPG, JPEG, PNG) <span class="req">*</span></label>
+            <label class="file-box">
+              <input type="file" name="photo" id="photo" accept=".jpg,.jpeg,.png,.doc,.docx,.pdf">
+              <span class="file-ico">◉</span>
+              <span class="file-meta">
+                <span class="file-name"></span>
+              </span>
+            </label>
+          </div>
+          <div class="field" data-field="cv">
+            <label data-i18n="f.cv">Joindre le CV (format PDF exclusivement) <span class="req">*</span></label>
+            <label class="file-box">
+              <input type="file" name="cv" id="cv" accept=".jpg,.jpeg,.png,.doc,.docx,.pdf">
+              <span class="file-ico">▤</span>
+              <span class="file-meta">
+                <span class="file-name"></span>
+              </span>
+            </label>
+          </div>
+          <div class="field" data-field="lettre">
+            <label data-i18n="f.lettre">Joindre la lettre de motivation (format PDF exclusivement) <span class="req">*</span></label>
+            <label class="file-box">
+              <input type="file" name="lettre" id="lettre" accept=".jpg,.jpeg,.png,.doc,.docx,.pdf">
+              <span class="file-ico">▤</span>
+              <span class="file-meta">
+                <span class="file-name"></span>
+              </span>
+            </label>
+          </div>
+          <div class="field" data-field="identite">
+            <label data-i18n="f.identite">Joindre la pièce d'identité ou le passeport (format PDF exclusivement) <span class="req">*</span></label>
+            <label class="file-box">
+              <input type="file" name="identite" id="identite" accept=".jpg,.jpeg,.png,.doc,.docx,.pdf">
+              <span class="file-ico">▤</span>
+              <span class="file-meta">
+                <span class="file-name"></span>
+              </span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 02. ÉTAT CIVIL ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">02</span><h2 data-i18n="form.sec2">Identité et état civil</h2></div>
+      <div class="fieldset-body">
+        <div class="grid-2">
+          <div class="field" data-field="nom">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="nom" data-i18n="f.nom">Nom <span class="req">*</span></label>
+            <input type="text" id="nom" name="nom">
+          </div>
+          <div class="field" data-field="prenoms">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="prenoms" data-i18n="f.prenoms">Prénoms <span class="req">*</span></label>
+            <input type="text" id="prenoms" name="prenoms">
+          </div>
+          <div class="field" data-field="date_naissance">
+            <label for="date_naissance" data-i18n="f.dnaiss">Date de naissance <span class="req">*</span></label>
+            <input type="date" id="date_naissance" name="date_naissance">
+          </div>
+          <div class="field" data-field="lieu_naissance">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="lieu_naissance" data-i18n="f.lnaiss">Lieu de naissance <span class="req">*</span></label>
+            <input type="text" id="lieu_naissance" name="lieu_naissance">
+          </div>
+          <div class="field" data-field="pays_naissance">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="pays_naissance" data-i18n="f.pnaiss">Pays de naissance <span class="req">*</span></label>
+            <input type="text" id="pays_naissance" name="pays_naissance">
+          </div>
+          <div class="field" data-field="nationalite_actuelle">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="nationalite_actuelle" data-i18n="f.natact">Nationalité actuelle <span class="req">*</span></label>
+            <input type="text" id="nationalite_actuelle" name="nationalite_actuelle">
+          </div>
+          <div class="field" data-field="nationalite_naissance">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="nationalite_naissance" data-i18n="f.natnaiss">Nationalité à la naissance, si différente <span class="req">*</span></label>
+            <input type="text" id="nationalite_naissance" name="nationalite_naissance">
+          </div>
+          <div class="field" data-field="sexe">
+            <span class="q-label" data-i18n="f.sexe">Sexe <span class="req">*</span></span>
+            <div class="choice-row">
+              <label class="choice"><input type="radio" name="sexe" value="Masculin"><span data-i18n="f.sexeM">Masculin</span></label>
+              <label class="choice"><input type="radio" name="sexe" value="Féminin"><span data-i18n="f.sexeF">Féminin</span></label>
+            </div>
+          </div>
+          <div class="field" data-field="etat_civil">
+            <label for="etat_civil" data-i18n="f.etatcivil">État civil <span class="req">*</span></label>
+            <select id="etat_civil" name="etat_civil">
+              <option value="" data-i18n="f.select">— Sélectionner —</option>
+              <option value="Célibataire" data-i18n="f.ec1">Célibataire</option>
+              <option value="Marié(e)" data-i18n="f.ec2">Marié(e)</option>
+              <option value="Divorcé(e)" data-i18n="f.ec3">Divorcé(e)</option>
+              <option value="Veuf/Veuve" data-i18n="f.ec4">Veuf / Veuve</option>
+            </select>
+          </div>
+          <div class="field" data-field="adresse">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="adresse" data-i18n="f.adresse">Adresse du domicile <span class="req">*</span></label>
+            <input type="text" id="adresse" name="adresse">
+          </div>
+          <div class="field" data-field="email">
+            <div class="field-note" data-i18n="f.emailNote">Veuillez renseigner avec soin vos e-mails pour recevoir sans erreur votre réponse d'inscription.</div>
+            <label for="email" data-i18n="f.email">E-mail <span class="req">*</span></label>
+            <input type="email" id="email" name="email" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false" data-i18n-ph="f.emailPh" placeholder="Touchez le champ et sélectionnez votre e-mail">
+            <a href="#" id="emailManual" class="email-manual" data-i18n="f.manualEntry">Impossible de sélectionner&nbsp;? Activez la saisie manuelle ici.</a>
+          </div>
+          <div class="field" data-field="email_confirme">
+            <div class="field-note" data-i18n="f.emailNote">Veuillez renseigner avec soin vos e-mails pour recevoir sans erreur votre réponse d'inscription.</div>
+            <label for="email_confirme" data-i18n="f.emailConfirm">Confirmer votre E-mail <span class="req">*</span></label>
+            <input type="email" id="email_confirme" name="email_confirme" autocomplete="email" inputmode="email" autocapitalize="off" spellcheck="false">
+          </div>
+          <div class="field" data-field="telephone">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="telephone" data-i18n="f.tel">Numéro(s) de téléphone <span class="req">*</span></label>
+            <input type="text" id="telephone" name="telephone">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 03. SITUATION PROFESSIONNELLE ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">03</span><h2 data-i18n="form.sec3">Situation professionnelle</h2></div>
+      <div class="fieldset-body">
+        <div class="grid-2">
+          <div class="field" data-field="profession">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="profession" data-i18n="f.profession">Profession actuelle <span class="req">*</span></label>
+            <input type="text" id="profession" name="profession">
+          </div>
+          <div class="field" data-field="salaire">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="salaire" data-i18n="f.salaire">Indiquez le salaire mensuel de votre dernier poste ou de votre poste actuel <span class="req">*</span></label>
+            <input type="text" id="salaire" name="salaire">
+          </div>
+          <div class="field" data-field="experience">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="experience" data-i18n="f.experience">Nombre d'années d'expérience <span class="req">*</span></label>
+            <input type="text" id="experience" name="experience">
+          </div>
+          <div class="field" data-field="profil">
+            <label for="profil" data-i18n="f.profil">Profil de partenariat demandé <span class="req">*</span></label>
+            <select id="profil" name="profil">
+              <option value="" data-i18n="f.select">— Sélectionner —</option>
+              <option value="Responsable de Liaison" data-i18n="f.profil1">Responsable de Liaison (Liaison Officer)</option>
+              <option value="Coordinateur" data-i18n="f.profil2">Coordinateur (Coordinator)</option>
+            </select>
+          </div>
+        </div>
+        <div class="field" data-field="motivation_profil">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="motivation_profil" data-i18n="f.whyProfil">Pourquoi êtes-vous intéressé(e) par ce profil&nbsp;? <span class="req">*</span></label>
+          <textarea id="motivation_profil" name="motivation_profil"></textarea>
+        </div>
+
+        <div class="field" data-field="langues">
+          <span class="q-label" data-i18n="f.langues">Langues maîtrisées — indiquez chaque langue, puis cochez Lu, Parlé et/ou Écrit (plusieurs cases possibles) <span class="req">*</span></span>
+          <div class="lang-table-head">
+            <span data-i18n="f.langCol1">Langue</span>
+            <span data-i18n="f.langCol2">Lu / Parlé / Écrit</span>
+            <span></span>
+          </div>
+          <div id="langRows"></div>
+          <button type="button" class="btn-add-lang" id="addLangBtn" data-i18n="f.addLang">+ Ajouter une langue</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04. APTITUDES ET DÉPLACEMENTS ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">04</span><h2 data-i18n="form.sec4">Aptitudes et déplacements</h2></div>
+      <div class="fieldset-body">
+        <div class="form-callout" data-i18n-html="f.callout1">Les partenaires du <b>GIRH</b> seront orientés vers des Projets issus des initiatives IDE en Afrique.</div>
+        <div class="field" data-field="apt_facteurs">
+          <span class="q-label" data-i18n="f.aptA">a) Certains facteurs limitent-ils votre aptitude&nbsp;? <span class="req">*</span></span>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="apt_facteurs" value="OUI"><span data-i18n="f.yes">OUI</span></label>
+            <label class="choice"><input type="radio" name="apt_facteurs" value="NON"><span data-i18n="f.no">NON</span></label>
+          </div>
+        </div>
+        <div class="field" data-field="depl_facteurs">
+          <span class="q-label" data-i18n="f.aptB">b) Certains facteurs limitent-ils vos possibilités de déplacement sur le territoire national&nbsp;? <span class="req">*</span></span>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="depl_facteurs" value="OUI"><span data-i18n="f.yes">OUI</span></label>
+            <label class="choice"><input type="radio" name="depl_facteurs" value="NON"><span data-i18n="f.no">NON</span></label>
+          </div>
+        </div>
+        <div class="field" data-field="depl_pays">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="depl_pays" data-i18n="f.aptPays">Dans l'affirmative, de quel pays s'agit-il&nbsp;? <span class="req">*</span></label>
+          <input type="text" id="depl_pays" name="depl_pays">
+        </div>
+        <div class="field" data-field="autre_nationalite">
+          <span class="q-label" data-i18n="f.natQ">Avez-vous entrepris des démarches officielles en vue d'acquérir une nationalité autre que votre nationalité actuelle&nbsp;? <span class="req">*</span></span>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="autre_nationalite" value="OUI"><span data-i18n="f.yes">OUI</span></label>
+            <label class="choice"><input type="radio" name="autre_nationalite" value="NON"><span data-i18n="f.no">NON</span></label>
+          </div>
+        </div>
+        <div class="field" data-field="autre_nationalite_details">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="autre_nationalite_details" data-i18n="f.natDetails">Dans l'affirmative, donnez tous renseignements utiles <span class="req">*</span></label>
+          <textarea id="autre_nationalite_details" name="autre_nationalite_details"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 05. ESPACES NUMÉRIQUES SÉCURISÉS ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">05</span><h2 data-i18n="form.sec5">Espaces numériques sécurisés</h2></div>
+      <div class="fieldset-body">
+        <div class="form-callout" data-i18n-html="f.callout2">En cas de succès de votre demande, des espaces numériques sécurisés (e-mail professionnel, accès aux bases de données internes) vous seront fournis dans le cadre des missions officielles. Proposez ci-dessous <b>trois (03) mots de passe par défaut</b>, pour les niveaux de sécurité des espaces numériques qui vous seront attribués.<br><b>NB&nbsp;:</b> proposez des sécurités sensées et inoubliables, contre les cas d'oubli, évitant les complications d'exécution de maintenance.</div>
+        <div class="grid-3">
+          <div class="field" data-field="securite1">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="securite1" data-i18n="f.sec1lbl">Inscrire sécurité 1 <span class="req">*</span></label>
+            <input type="text" id="securite1" name="securite1">
+          </div>
+          <div class="field" data-field="securite2">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="securite2" data-i18n="f.sec2lbl">Inscrire sécurité 2 <span class="req">*</span></label>
+            <input type="text" id="securite2" name="securite2">
+          </div>
+          <div class="field" data-field="securite3">
+            <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+            <label for="securite3" data-i18n="f.sec3lbl">Inscrire sécurité 3 <span class="req">*</span></label>
+            <input type="text" id="securite3" name="securite3">
+          </div>
+        </div>
+        <div class="field" data-field="parrain">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="parrain" data-i18n="f.parrain">En cas de parrainage, veuillez indiquer l'identité complète de votre parrain (ou l'identité complète de la personne qui vous a informé(e) de cette offre) <span class="req">*</span></label>
+          <textarea id="parrain" name="parrain"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 06. DÉCLARATIONS JUDICIAIRES ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">06</span><h2 data-i18n="form.sec6">Déclarations judiciaires</h2></div>
+      <div class="fieldset-body">
+        <div class="field" data-field="judiciaire">
+          <span class="q-label" data-i18n="f.judQ">Avez-vous jamais été arrêté(e), inculpé(e) ou poursuivi(e) pour un crime&nbsp;? Avez-vous jamais été reconnu(e) coupable ou condamné(e) à une amende ou à une peine de prison pour un délit (autre qu'une infraction mineure en matière de circulation)&nbsp;? <span class="req">*</span></span>
+          <div class="choice-row">
+            <label class="choice"><input type="radio" name="judiciaire" value="OUI"><span data-i18n="f.yes">OUI</span></label>
+            <label class="choice"><input type="radio" name="judiciaire" value="NON"><span data-i18n="f.no">NON</span></label>
+          </div>
+        </div>
+        <div class="field" data-field="judiciaire_details">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="judiciaire_details" data-i18n="f.judDetails">Dans l'affirmative, faites un rapport détaillé et complet de chaque cas <span class="req">*</span></label>
+          <textarea id="judiciaire_details" name="judiciaire_details"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 07. QUESTIONNAIRE D'ÉVALUATION ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">07</span><h2 data-i18n="form.sec7">Questionnaire d'évaluation</h2></div>
+      <div class="fieldset-body">
+        <div class="field" data-field="q_conformite_def">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_conformite_def" data-i18n="f.q1">Définissez «&nbsp;la conformité administrative et juridique&nbsp;» dans un contexte professionnel. <span class="req">*</span></label>
+          <textarea id="q_conformite_def" name="q_conformite_def"></textarea>
+        </div>
+        <div class="field" data-field="q_conformite_avis">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_conformite_avis" data-i18n="f.q2">Dans les opérations et le bon fonctionnement d'une entité, considérez-vous «&nbsp;la conformité administrative et juridique&nbsp;» comme facultative ou indispensable&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_conformite_avis" name="q_conformite_avis"></textarea>
+        </div>
+        <div class="field" data-field="q_attitude">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_attitude" data-i18n="f.q3">Selon vous, quelle devrait être votre attitude concernant les règles juridiques en vigueur dans un partenariat professionnel auquel vous aspirez&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_attitude" name="q_attitude"></textarea>
+        </div>
+        <div class="field" data-field="q_ide">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_ide" data-i18n="f.q4">Que savez-vous, en résumé, sur l'Investissement Direct Étranger en Afrique&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_ide" name="q_ide"></textarea>
+        </div>
+        <div class="field" data-field="q_acteurs">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_acteurs" data-i18n="f.q5">Qui sont les acteurs qui financent les initiatives IDE(s) en Afrique&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_acteurs" name="q_acteurs"></textarea>
+        </div>
+        <div class="field" data-field="q_grh">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_grh" data-i18n="f.q6">Que savez-vous du GRH International&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_grh" name="q_grh"></textarea>
+        </div>
+        <div class="field" data-field="q_implication">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_implication" data-i18n="f.q7">Que comprenez-vous de l'implication du GRH International dans la mise en œuvre des initiatives IDE(s) en Afrique&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_implication" name="q_implication"></textarea>
+        </div>
+        <div class="field" data-field="q_objectif">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_objectif" data-i18n="f.q8">Quel est l'objectif du recensement des partenaires associés par le GRH International&nbsp;? <span class="req">*</span></label>
+          <textarea id="q_objectif" name="q_objectif"></textarea>
+        </div>
+        <div class="field" data-field="q_formation">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_formation" data-i18n="f.q9">Êtes-vous disposé(e) à suivre nos formations assurées, pour accroître votre expertise, se concluant par des certifications à titre personnel&nbsp;? Formulez une phrase pour votre réponse. <span class="req">*</span></label>
+          <textarea id="q_formation" name="q_formation"></textarea>
+        </div>
+        <div class="field" data-field="q_impacts">
+          <div class="field-note" data-i18n="f.neant">Écrivez NÉANT si vous n'avez pas de réponse.</div>
+          <label for="q_impacts" data-i18n="f.q10">En supposant que vous êtes en poste, proposez brièvement trois (03) idées d'impacts positifs que vous envisageriez pour le progrès de votre communauté. Ceci évalue votre engagement à accompagner notre mission et serait susceptible, en cas d'originalité, d'être joint à nos objectifs pour financement. <span class="req">*</span></label>
+          <textarea id="q_impacts" name="q_impacts"></textarea>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 08. CERTIFICATION ============ -->
+    <section class="fieldset">
+      <div class="fieldset-head"><span class="fieldset-num">08</span><h2 data-i18n="form.sec8">Certification</h2></div>
+      <div class="fieldset-body">
+        <div class="field" data-field="certification">
+          <label class="cert-box">
+            <input type="checkbox" name="certification" id="certification" value="Certifié">
+            <span data-i18n-html="f.cert">Je certifie que mes déclarations en réponse aux questions sont vraies, complètes et exactes. <b>N.&nbsp;B.&nbsp;:</b> je pourrais être invité(e) à produire les pièces établissant l'exactitude de mes déclarations. <span class="req">*</span></span>
+          </label>
+        </div>
+      </div>
+    </section>
+
+    <input type="hidden" name="langue_interface" id="langue_interface" value="fr">
+
+    <div class="submit-wrap">
+      <button type="submit" class="btn-submit" id="submitBtn" data-i18n="f.submit">Soumettre mon inscription</button>
+      <p class="submit-note" data-i18n="f.submitNote">Votre dossier complet sera transmis au service de recensement du GRH International.</p>
+    </div>
+  </form>
+</main>
+
+<footer class="site-footer">
+  <div class="foot-rule"></div>
+  <p data-i18n-html="footer.copy">© Droits d'auteur par <b>GRH International (GIRH)</b></p>
+</footer>
+
+<!-- Fenêtre modale centrale -->
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true">
+  <div class="modal-card" id="modalCard">
+    <div class="modal-head">
+      <span class="modal-icon" id="modalIcon">!</span>
+      <span class="modal-title" id="modalTitle"></span>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-foot">
+      <button type="button" class="btn-modal" id="modalClose" data-i18n="modal.close">Compris</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/i18n.js"></script>
+<script src="js/form.js"></script>
+<script>
+/* FILET DE SECOURS ULTIME : si, pour une raison quelconque (fichier
+   bloqué, erreur de chargement chez l'hébergeur), la logique du
+   formulaire n'était pas active, le bouton « Soumettre » ouvrirait
+   quand même la messagerie pré-remplie du participant. */
+(function () {
+  window.addEventListener('load', function () {
+    if (window.__girhFormReady) { return; }
+    var f = document.getElementById('registrationForm');
+    if (!f) { return; }
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var enc = function (s) {
+        return encodeURIComponent(s).replace(/[!'()*]/g, function (c) {
+          return '%' + c.charCodeAt(0).toString(16).toUpperCase();
+        });
+      };
+      window.location.href = 'mailto:invest-initiative@africamail.com'
+        + '?subject=' + enc('Mon inscription')
+        + '&body=' + enc("Je vous envoie mon dossier d'inscription.");
+    });
+  });
+})();
+</script>
+</body>
+</html>
