@@ -1,0 +1,44 @@
+# ============================================================
+# GRH INTERNATIONAL (GIRH) — Sécurité du serveur (Apache)
+# ============================================================
+
+# Interdire le listage des dossiers
+Options -Indexes
+
+# Réécriture d'URL : masquer les extensions .php
+RewriteEngine On
+
+# /dossier → dossier.php (page de consultation des fichiers par ID)
+RewriteRule ^dossier$ dossier.php [L,QSA]
+
+# /recuperer → recuperer.php (lien direct depuis les e-mails)
+RewriteRule ^recuperer$ recuperer.php [L,QSA]
+
+# /admin → admin.php (désactivé par défaut : fichier supprimé)
+# RewriteRule ^admin$ admin.php [L,QSA]
+
+# Protéger les fichiers sensibles
+<FilesMatch "^(config\.php|\.htaccess|\.htpasswd)$">
+  Require all denied
+</FilesMatch>
+
+# Bloquer l'accès direct à submit.php depuis le web (utilisé uniquement en POST interne)
+<Files "submit.php">
+  Require all granted
+</Files>
+
+# Protéger le dossier de données
+RedirectMatch 403 ^/data(/|$)
+
+# Limiter la taille des requêtes
+<IfModule mod_php.c>
+  php_value upload_max_filesize 10M
+  php_value post_max_size 64M
+</IfModule>
+
+# En-têtes de sécurité
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
